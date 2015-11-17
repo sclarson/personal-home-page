@@ -1,7 +1,13 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect,render
+from grok.models import LinkItem
 
-
-# Create your views here.
 def home_page(request):
-	return HttpResponse('<html><head><title>Personal Home Page</title></head></html>')
+	links = LinkItem.objects.all()
+	return render(request, 'home.html', {'links': links})
+
+def new_link(request):
+	link_text = request.POST.get('new_link')
+	LinkItem.objects.create(url=link_text)
+	return redirect('/')
+

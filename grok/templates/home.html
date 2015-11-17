@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>Personal Home Page</title>
+	</head>
+	<body>
+		<form method='POST' action='/grok/new'>
+			{% csrf_token %}
+			<input id='new_link' name='new_link' placeholder='Enter a link'  />
+		</form>
+		<h1>Queued URLs</h1>
+		<ul id='links' name='links'>
+		{% for link in links %}
+			<li><a href="{{ link.url }}" target="_blank">{{ link.url }}</a></li>
+		{% endfor %}
+		</ul>
+	</body>
+</html>

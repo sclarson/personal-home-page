@@ -1,3 +1,4 @@
 from django.db import models
 
-# Create your models here.
+class LinkItem(models.Model):
+	url = models.TextField()

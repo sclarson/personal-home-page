@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^$','grok.views.home_page', name='home'),
+    url(r'^grok/new$', 'grok.views.new_link', name='new_link'),
     url(r'^admin/', include(admin.site.urls)),
 ]
