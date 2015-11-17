@@ -13,7 +13,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='LinkItem',
             fields=[
-                ('id', models.AutoField(auto_created=True, verbose_name='ID', serialize=False, primary_key=True)),
+                ('id', models.AutoField(auto_created=True,
+                                        verbose_name='ID', serialize=False, primary_key=True)),
                 ('url', models.TextField()),
             ],
         ),
